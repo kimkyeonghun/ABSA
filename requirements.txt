@@ -1,0 +1,5 @@
+transformer==4.8.1
+pytorch==1.7.1
+allennlp==2.5.0
+allennlp-models==2.5.0
+pytorch-pretrained-bert==0.6.2

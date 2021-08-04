@@ -1,0 +1,24 @@
+[INFO|utils.py:32] 2021-07-20 16:22:32 Writing logs at ./logs/log-20210720-07.log
+[INFO|main.py:32] 2021-07-20 16:22:32 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|tokenization.py:190] 2021-07-20 16:22:33 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[ERROR|main.py:149] 2021-07-20 16:22:35 ERROR
+Traceback (most recent call last):
+  File "main.py", line 147, in <module>
+    main()
+  File "main.py", line 141, in main
+    model, optimizer = prepare_for_training(processor)
+  File "main.py", line 64, in prepare_for_training
+    model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(processor.get_labels()))
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/transformers/modeling_utils.py", line 1173, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+  File "/home/kkh/ABSA/AEBERT.py", line 13, in __init__
+    self.apply(self.init_weights)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 445, in apply
+    module.apply(fn)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 445, in apply
+    module.apply(fn)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 445, in apply
+    module.apply(fn)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 446, in apply
+    fn(self)
+TypeError: init_weights() takes 1 positional argument but 2 were given

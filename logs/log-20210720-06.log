@@ -1,0 +1,22 @@
+[INFO|utils.py:32] 2021-07-20 16:19:57 Writing logs at ./logs/log-20210720-06.log
+[INFO|main.py:32] 2021-07-20 16:19:57 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|tokenization.py:190] 2021-07-20 16:19:58 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|filelock.py:274] 2021-07-20 16:19:59 Lock 139718378786896 acquired on /home/kkh/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+[INFO|filelock.py:318] 2021-07-20 16:20:00 Lock 139718378786896 released on /home/kkh/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+[INFO|filelock.py:274] 2021-07-20 16:20:00 Lock 139718378737552 acquired on /home/kkh/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+[INFO|filelock.py:318] 2021-07-20 16:20:48 Lock 139718378737552 released on /home/kkh/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+[ERROR|main.py:149] 2021-07-20 16:20:48 ERROR
+Traceback (most recent call last):
+  File "main.py", line 147, in <module>
+    main()
+  File "main.py", line 141, in main
+    model, optimizer = prepare_for_training(processor)
+  File "main.py", line 64, in prepare_for_training
+    model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(processor.get_labels()))
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/transformers/modeling_utils.py", line 1173, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+  File "/home/kkh/ABSA/AEBERT.py", line 13, in __init__
+    self.apply(self.init_bert_weights)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 779, in __getattr__
+    type(self).__name__, name))
+torch.nn.modules.module.ModuleAttributeError: 'BertForSequenceClassification' object has no attribute 'init_bert_weights'

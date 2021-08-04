@@ -1,0 +1,19 @@
+[INFO|utils.py:32] 2021-07-20 16:24:08 Writing logs at ./logs/log-20210720-08.log
+[INFO|main.py:32] 2021-07-20 16:24:08 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|tokenization.py:190] 2021-07-20 16:24:09 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|main.py:112] 2021-07-20 16:24:12 ============================Training Start=====================================
+[INFO|main.py:113] 2021-07-20 16:24:12  Training Exampels : 95
+[INFO|main.py:114] 2021-07-20 16:24:12  Batch Size : 32
+[INFO|main.py:117] 2021-07-20 16:24:12 Model save path: ./model_save/20210720-00
+[INFO|main.py:124] 2021-07-20 16:24:12 ====================================Train====================================
+[ERROR|main.py:149] 2021-07-20 16:24:14 ERROR
+Traceback (most recent call last):
+  File "main.py", line 147, in <module>
+    main()
+  File "main.py", line 142, in main
+    train(model, optimizer, trainLoader, testLoader)
+  File "main.py", line 125, in train
+    train_loss = train_epoch(model, trainLoader, optimizer)
+  File "main.py", line 89, in train_epoch
+    input_ids, segment_ids, input_mask, label_id = batch
+ValueError: not enough values to unpack (expected 4, got 3)

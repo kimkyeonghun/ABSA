@@ -1,0 +1,21 @@
+[INFO|utils.py:32] 2021-07-23 11:39:36 Writing logs at ./logs/log-20210723-01.log
+[INFO|main.py:32] 2021-07-23 11:39:36 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|tokenization.py:190] 2021-07-23 11:39:37 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|main.py:113] 2021-07-23 11:39:56 ============================Training Start=====================================
+[INFO|main.py:114] 2021-07-23 11:39:56  Training Exampels : 95
+[INFO|main.py:115] 2021-07-23 11:39:56  Batch Size : 32
+[INFO|main.py:118] 2021-07-23 11:39:56 Model save path: ./model_save/20210723-00
+[INFO|main.py:125] 2021-07-23 11:39:56 ====================================Train====================================
+[INFO|main.py:127] 2021-07-23 11:40:11 [Epoch 1] train_loss : 0.3876617379878697
+[INFO|main.py:128] 2021-07-23 11:40:11 ====================================Test====================================
+[ERROR|main.py:150] 2021-07-23 11:40:11 ERROR
+Traceback (most recent call last):
+  File "main.py", line 148, in <module>
+    main()
+  File "main.py", line 143, in main
+    train(model, optimizer, trainLoader, testLoader)
+  File "main.py", line 129, in train
+    test_loss = test_epoch(model,testLoader)
+  File "main.py", line 104, in test_epoch
+    for _, batch in enumerate(tqdm(testLoader),desc="Iteration"):
+TypeError: 'desc' is an invalid keyword argument for enumerate()

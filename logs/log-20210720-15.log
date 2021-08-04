@@ -1,0 +1,29 @@
+[INFO|utils.py:32] 2021-07-20 16:51:41 Writing logs at ./logs/log-20210720-15.log
+[INFO|main.py:32] 2021-07-20 16:51:41 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|tokenization.py:190] 2021-07-20 16:51:42 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|main.py:113] 2021-07-20 16:51:46 ============================Training Start=====================================
+[INFO|main.py:114] 2021-07-20 16:51:46  Training Exampels : 95
+[INFO|main.py:115] 2021-07-20 16:51:46  Batch Size : 32
+[INFO|main.py:118] 2021-07-20 16:51:46 Model save path: ./model_save/20210720-07
+[INFO|main.py:125] 2021-07-20 16:51:46 ====================================Train====================================
+[ERROR|main.py:150] 2021-07-20 16:51:47 ERROR
+Traceback (most recent call last):
+  File "main.py", line 148, in <module>
+    main()
+  File "main.py", line 143, in main
+    train(model, optimizer, trainLoader, testLoader)
+  File "main.py", line 126, in train
+    train_loss = train_epoch(model, trainLoader, optimizer)
+  File "main.py", line 91, in train_epoch
+    loss = model(input_ids, segment_ids, input_mask, label_id)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/kkh/ABSA/AEBERT.py", line 18, in forward
+    sequence_output = self.dropout(sequence_output)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/modules/dropout.py", line 58, in forward
+    return F.dropout(input, self.p, self.training, self.inplace)
+  File "/home/kkh/anaconda3/envs/ABSA/lib/python3.7/site-packages/torch/nn/functional.py", line 983, in dropout
+    else _VF.dropout(input, p, training))
+TypeError: dropout(): argument 'input' (position 1) must be Tensor, not BaseModelOutputWithPoolingAndCrossAttentions

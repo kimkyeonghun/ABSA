@@ -1,0 +1,18 @@
+[INFO|utils.py:32] 2021-07-20 16:11:49 Writing logs at ./logs/log-20210720-00.log
+[INFO|main.py:32] 2021-07-20 16:11:49 **************************Load SemEval_Restaurants_2014 Dataset
+[INFO|file_utils.py:224] 2021-07-20 16:11:50 https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt not found in cache, downloading to /tmp/tmpgv2p8d31
+[INFO|file_utils.py:237] 2021-07-20 16:11:52 copying /tmp/tmpgv2p8d31 to cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|file_utils.py:241] 2021-07-20 16:11:52 creating metadata file for /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[INFO|file_utils.py:250] 2021-07-20 16:11:52 removing temp file /tmp/tmpgv2p8d31
+[INFO|tokenization.py:190] 2021-07-20 16:11:52 loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/kkh/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+[ERROR|main.py:149] 2021-07-20 16:11:52 ERROR
+Traceback (most recent call last):
+  File "main.py", line 147, in <module>
+    main()
+  File "main.py", line 140, in main
+    trainLoader, testLoader, processor = load_dataset()
+  File "main.py", line 36, in load_dataset
+    train_examples = processor.get_train_examples(f"{args.data}_{args.year}_Train_biaffine_dep.json")
+  File "/home/kkh/ABSA/data_utils.py", line 80, in get_train_examples
+    return self._create_examples(self._read_json(os.path.join(data_dir,fn),"train"))
+AttributeError: 'AeProcessor' object has no attribute '_create_examples'
